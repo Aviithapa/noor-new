@@ -16,7 +16,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner text-light carousel-zoom">
           @foreach($banners as $index => $banner)
-          <div class="item {{ $index === 13 ? 'active' : '' }}">
+          <div class="item {{ $index === 1 ? 'active' : '' }}">
             {{-- {{ $index }} --}}
             @if(isset($banner->media))
                     @foreach ($banner->media as $media)
