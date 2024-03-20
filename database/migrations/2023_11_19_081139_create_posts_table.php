@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable()->default('');
             $table->text('content')->nullable();
-            $table->text('excerpt')->nullable()->default('');
-            $table->string('image')->nullable()->default('');
-            $table->string('logo_image')->nullable()->default('');
-            $table->string('meta_link')->nullable()->default('');
-            $table->string('meta_description')->nullable()->default('');
+            $table->text('excerpt')->nullable();
+            $table->string('image')->nullable();
+            $table->string('logo_image')->nullable();
+            $table->string('meta_link')->nullable();
+            $table->string('meta_description')->nullable();
             $table->enum('type', ['homepage_banner', 'testimonial', 'content', 'news',  'services', 'team', 'pages', 'about', 'faq', 'gallery', 'bod', 'csr', 'clients'])->nullable();
             $table->string('slug')->unique();
             $table->softDeletes();
