@@ -10,7 +10,7 @@
       type="image/x-icon"
     />
     <title>
-      Noor
+      NOOR MULTIPURPOSE COOPERATIVE | {{isset($pageData->title)?$pageData->title: ''}}
     </title>
     @include('website.layout.style')
     @stack('styles')

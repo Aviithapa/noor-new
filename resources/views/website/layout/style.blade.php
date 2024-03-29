@@ -1,8 +1,4 @@
-<link
-      rel="shortcut icon"
-      href="{{ asset('assets/images/favicon.png') }}"
-      type="image/x-icon"
-    />
+
 
     <!-- ========== Start Stylesheet ========== -->
     <link href="{{ asset('noor/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
