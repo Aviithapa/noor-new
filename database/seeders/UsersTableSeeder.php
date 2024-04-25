@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'username' => 'Super Admin User',
-                'email' => 'superadmin@pandeyconnect.com',
+                'email' => 'superadmin@noor.com',
                 'password' => Hash::make('Nepal@123'),
                 'status' => 'active',
                 'email_verified_at' => Carbon::now(),
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'username' => 'Admin User',
-                'email' => 'admin@pandeyconnect.com',
+                'email' => 'admin@noor.com',
                 'password' => Hash::make('Nepal@123'),
                 'status' => 'active',
                 'email_verified_at' => Carbon::now(),
