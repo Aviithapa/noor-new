@@ -88,7 +88,9 @@
                                                             <td>{{ $data->id }}</td>
                                                             <td>{{ $data->title }}</td>
                                                             <td>{{ $data->slug }}</td>
-                                                            <td>{{ $data->excerpt }}</td>
+                                                            <td>
+                                                                {{ \Illuminate\Support\Str::limit($data->excerpt, 150, $end='...') }}
+                                                                </td>
                                                             <td><a href="{{ route('post.edit', ['post' => $data->id]) }}"><span class="badge bg-info-subtle text-info">Edit</span></a>
                                                                <a  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"  data-attr="{{ route('post.destroy', ['post' => $data->id]) }}" style="cursor: pointer;"><span class="badge bg-danger-subtle text-danger">Delete</span></a>                                                            </td>
 
