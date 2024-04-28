@@ -29,19 +29,19 @@
                 </div>
                 <div class="col-md-6 services text-center">
                     <div class="col-md-6 equal-height">
-                        <a href="#">
+                        <a href="{{ url('saving') }}">
                             <i class="flaticon-service"></i>
                             <h4>Saving Planning</h4>
                         </a>
                     </div>
                     <div class="col-md-6 equal-height">
-                        <a href="#">
+                        <a href="{{ url('loan') }}">
                             <i class="flaticon-profits"></i>
                             <h4>Loan Planning</h4>
                         </a>
                     </div>
                     <div class="col-md-6 equal-height">
-                        <a href="#">
+                        <a href="{{ url('saving') }}">
                             <i class="flaticon-id"></i>
                             <h4>Fixed Saving Planning</h4>
                         </a>
