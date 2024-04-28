@@ -37,6 +37,13 @@ class HomeController extends BaseController
                     $this->view_data['banners'] = $this->postRepository->all()->where('type', 'homepage_banner');
                     $this->view_data['services'] = $this->postRepository->all()->where('type', 'services');
                     break;
+                case 'csr':
+                    $this->view_data['csr'] = $this->postRepository->all()->where('type', 'csr');
+                    break;
+                case 'loan':
+                    $this->view_data['loan'] = $this->postRepository->all()->where('type', 'loan');
+
+                    break;
             }
             return view('website.pages.' . $slug,  $this->view_data);
         }

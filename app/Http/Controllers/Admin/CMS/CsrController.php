@@ -64,10 +64,12 @@ class CsrController extends Controller
             } else if (isset($data['files']) && count($data['files']) > 0) {
                 foreach ($data['files'] as $file) {
                     $response =  $this->fileUploader->upload($file, "csr");
+
                     $response['post_id'] = $news->id;
                     $this->mediaRepository->store($response);
                 }
             };
+
             DB::commit();
             session()->flash('success', 'csr has been created successfully.');
             return redirect()->route('csr.index');

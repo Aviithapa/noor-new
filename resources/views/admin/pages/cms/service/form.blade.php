@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="card-body">
                                        @if(isset($model))
-                                             <form method="POST" action="{{ route('service.update', ["post" => $model->id]) }}" enctype="multipart/form-data">
+                                             <form method="POST" action="{{ route('service.update', ["service" => $model->id]) }}" enctype="multipart/form-data">
                                                  @method('PUT')
                                         @else
                                             <form method="POST" action="{{ route('service.store') }}" enctype="multipart/form-data">
@@ -41,9 +41,14 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Type </label>
-                                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Type" name="type" value="Content Management" disabled>
+                                                   
+                                                    <select class="form-control" name="type" id="type" required >
+                                                           <option value="{{ isset($model) ? $model->type : old('type') }}">{{ isset($model) ? $model->type : old('type') }}</option>
+                                                            <option value="services">Services</option>
+                                                            <option value="loan">Loan</option> 
+                                                     </select>
                                                      @if($errors->any())
-                                                         {{ $errors->first('email') }}
+                                                         {{ $errors->first('type') }}
                                                       @endif
                                                 </div>
                                             </div>

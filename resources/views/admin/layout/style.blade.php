@@ -1,4 +1,8 @@
-<link rel="shortcut icon" href="{{asset ('assets/images/favicon.ico') }}">
+  <link
+      rel="shortcut icon"
+      href="{{ asset('noor/assets/img/logo.png') }}"
+      type="image/x-icon"
+    />
 <script src="{{ asset('backend/assets/js/config.js') }}"></script>
 <link href="{{ asset('backend/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
 <link href="{{ asset('backend/assets/css/icons.css') }}" rel="stylesheet" type="text/css" />

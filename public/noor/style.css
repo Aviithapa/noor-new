@@ -2200,7 +2200,7 @@ nav.bootsnav.navbar-default.info-topbar.sticked ul li a {
 }
 
 .service-item .overlay {
-  background: rgba(33, 84, 207, 0.8);
+  background: #00431f;
   height: 100%;
   left: 0;
   opacity: 1;

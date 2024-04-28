@@ -87,7 +87,7 @@
                
               style="float: right;">
               <li>
-                <a href="#"><i class="fab fa-facebook-f" style="font-size: 20px;"></i></a>
+                <a href="https://www.facebook.com/p/Noor-Multipurpose-Co-operative-Ltd-100063465941362/" target="blank"><i class="fab fa-facebook-f" style="font-size: 20px;"></i></a>
               </li>
             </ul>
           

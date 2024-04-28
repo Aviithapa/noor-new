@@ -81,13 +81,13 @@
           <div class="row">
             <div class="col-md-12">
               <div class="col-md-6 logo">
-                <img src="assets/img/logo-light.png" alt="Logo" />
+                <img src="{{ asset('noor/assets/img/logo.png') }}" alt="Logo" />
               </div>
               <div class="col-md-6 footer-bottom-menu text-right">
                 <ul>
-                  <li><a href="terms-conditions.html">Terms of Use</a></li>
-                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="contact-1.html">Contact Us</a></li>
+                  <li><a href="{{ url('terms-conditions') }}">Terms of Use</a></li>
+                  <li><a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
+                  <li><a href="{{ url('contact') }}">Contact Us</a></li>
                 </ul>
               </div>
             </div>

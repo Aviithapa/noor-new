@@ -32,7 +32,7 @@ class ServiceController extends Controller
     public function index(Request $request)
     {
         //
-        $services = $this->postRepository->getPaginatedList($request, 'services');
+        $services = $this->postRepository->getPaginatedList($request, 'services', 'loan');
         return view('admin.pages.cms.service.index', compact('services', 'request'));
     }
 
@@ -54,7 +54,6 @@ class ServiceController extends Controller
         $data = $request->all();
         try {
             DB::beginTransaction();
-            $data['type'] = 'services';
             $data['slug'] = generateSlug($data['title']);
             $news = $this->postRepository->store($data);
 
