@@ -108,13 +108,18 @@ class ServiceController extends Controller
             if ($news == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if ($data['files'] && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "banner");
-                    $response['post_id'] = $id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "banner");
+                $service = $this->postRepository->findOrFail($id);
+                $service->image = $response['path'];
+                $service->save();
+                $response['post_id'] = $id;
+                $this->mediaRepository->store($response);
             };
+
+
             DB::commit();
             session()->flash('success', 'Service has been updated successfully.');
             return redirect()->route('service.index');

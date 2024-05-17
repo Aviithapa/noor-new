@@ -16,33 +16,28 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner text-light carousel-zoom">
           @foreach($banners as $index => $banner)
-          
-          <div class="item {{ $index === 2 ? 'active' : '' }}">
-            {{-- {{ $index }} --}}
-            @if(isset($banner->media))
-                    @foreach ($banner->media as $media)
-            <div
-              class="slider-thumb bg-fixed"
-              style="background-image: url({{getImage($media->path)}}); opacity: 2"
-            ></div>
-            @endforeach
-            @endif
-            <div class="box-table shadow theme">
-              <div class="box-cell">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-9">
-                      <div class="content">
-                        <h1 data-animation="animated slideInLeft">
-                          {{ $banner->title }}
-                        </h1>
+            <div class="item {{ $loop->first ? 'active' : '' }}">
+            
+              <div
+                class="slider-thumb bg-fixed"
+                style="background-image: url({{getImage($banner->image)}}); opacity: 2"
+              ></div>
+              <div class="box-table shadow theme">
+                <div class="box-cell">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <div class="content">
+                          <h1 data-animation="animated slideInLeft">
+                            {{ $banner->title }}
+                          </h1>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
             @endforeach
           
           
@@ -73,22 +68,15 @@
         <div class="row">
           <div class="col-md-6 default info">
             <h2>
-              Welcome to Noor<br />
-              Multipurpose Co-operative Ltd
+             {{ $about->title }}
             </h2>
             <p>
-              Noor Muptipurpose Co-operative is a dedicated platform fostering
-              collaborative efforts and mutual support within our community.
-              Established on the principles of unity, shared responsibility, and
-              equitable participation, we are a cooperative committed to
-              empowering individuals and businesses alike. At Noor Muptipurpose
-              Co-operative, we believe in harnessing collective strength to
-              achieve common goals.
+             {{ $about->excerpt }}
             </p>
             <div class="bottom-info">
               <ul>
                 <li>
-                  <a class="btn btn-theme effect btn-sm" href="#">contact us</a>
+                  <a class="btn btn-theme effect btn-sm" href="{{ url('contact') }}">contact us</a>
                 </li>
                 <li><i class="fas fa-phone"></i> 01-4155311</li>
               </ul>
@@ -96,19 +84,19 @@
           </div>
           <div class="col-md-6 services text-center">
             <div class="col-md-6 equal-height">
-              <a href="#">
+              <a href="{{ url('saving') }}">
                 <i class="flaticon-service"></i>
                 <h4>Saving Account</h4>
               </a>
             </div>
             <div class="col-md-6 equal-height">
-              <a href="#">
+              <a href="{{ url('saving') }}">
                 <i class="flaticon-profits"></i>
                 <h4>Fixed Saving</h4>
               </a>
             </div>
             <div class="col-md-6 equal-height">
-              <a href="#">
+              <a href="{{ url('loan') }}">
                 <i class="flaticon-id"></i>
                 <h4>Loan Type</h4>
               </a>
@@ -129,12 +117,11 @@
               class="service-carousel text-center text-light owl-carousel owl-theme"
             >
             @foreach($services as $service)
-            @if(isset($service->media))
-                    @foreach ($service->media as $media)
+           
             
              <div class="service-item">
                 <div class="info-box">
-                  <img src="{{getImage($media->path)}}" alt="Thumb" height="360" />
+                  <img src="{{getImage($service->image)}}" alt="Thumb" height="360" />
                   <div class="overlay">
                     <div class="box">
                       <div class="content">
@@ -143,70 +130,16 @@
                           <p>
                             {{ $service->excerpt }}
                           </p>
-                          <a href="#">Read More</a>
+                          <a href="{{ url('loan') }}">Read More</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            @endforeach
-            @endif
+          
             @endforeach
              
-      
-              <div class="service-item">
-                <div class="info-box">
-                  <img src="{{ asset('noor/assets/img/mudati.jpeg') }}" alt="Thumb" />
-                  <div class="overlay">
-                    <div class="box">
-                      <div class="content">
-                        <div class="overlay-content">
-                          <h4><a href="#">Fixed Deposit</a></h4>
-                          <p>
-                            Fixed deposit accounts provide a secure avenue for
-                            savers to preserve capital while earning competitive
-                            interest rates, ensuring financial stability and
-                            long-term growth of savings. With guaranteed returns
-                            and flexible tenure options, these accounts offer a
-                            reliable solution for individuals seeking to achieve
-                            their saving objectives with confidence and
-                            consistency.
-                          </p>
-                          <a href="#">Read More</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="service-item">
-                <div class="info-box">
-                  <img src="{{ asset('noor/assets/img/balbachat.jpeg') }}" alt="Thumb" />
-                  <div class="overlay">
-                    <div class="box">
-                      <div class="content">
-                        <div class="overlay-content">
-                          <h4><a href="#">Bal Bachat</a></h4>
-                          <p>
-                            Bal Bachat accounts offer a structured platform for
-                            cultivating early savings habits and financial
-                            literacy, empowering young individuals to develop a
-                            responsible approach towards money management from
-                            an early age. In Noor Multipurpose Cooperative, it
-                            typically feature tailored benefits such as
-                            competitive interest rates and educational
-                            resources, fostering a solid foundation for future
-                            financial success while instilling the value of
-                            saving and prudent financial decision-making.
-                          </p>
-                          <a href="#">Read More</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

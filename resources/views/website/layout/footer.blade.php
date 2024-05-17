@@ -8,16 +8,7 @@
               <div class="f-item">
                 <h4>About Us</h4>
                 <p>
-                  At Noor Muptipurpose Co-operative, we believe in harnessing
-                  collective strength to achieve common goals. Through a
-                  framework built on cooperation and inclusivity, we aim to
-                  create a thriving ecosystem where members contribute,
-                  collaborate, and benefit collectively. Our cooperative
-                  endeavors span various sectors, fostering innovation,
-                  sustainability, and economic growth. With a diverse membership
-                  base, comprising passionate individuals, entrepreneurs, and
-                  organizations, we create opportunities for networking,
-                  resource-sharing, and skill enhancement.
+                 {!! $footerAbout->content !!}
                 </p>
                 <p>
                   <span

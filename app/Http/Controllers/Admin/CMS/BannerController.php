@@ -59,17 +59,16 @@ class BannerController extends Controller
             $data['type'] = 'homepage_banner';
             $data['slug'] = generateSlug($data['title']);
             $banner = $this->postRepository->store($data);
-
-
             if ($banner == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if (isset($data['files']) && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "banner");
-                    $response['post_id'] = $banner->id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "banner");
+                $banner->image = $response['path'];
+                $banner->save();
+                $response['post_id'] = $banner->id;
+                $this->mediaRepository->store($response);
             };
             DB::commit();
             session()->flash('success', 'Banner has been created successfully.');
@@ -112,12 +111,14 @@ class BannerController extends Controller
             if ($banner == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if ($data['files'] && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "banner");
-                    $response['post_id'] = $id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "banner");
+                $banner = $this->postRepository->findOrFail($id);
+                $banner->image = $response['path'];
+                $banner->save();
+                $response['post_id'] = $id;
+                $this->mediaRepository->store($response);
             };
             DB::commit();
             session()->flash('success', 'banner has been updated successfully.');

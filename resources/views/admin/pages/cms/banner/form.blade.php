@@ -32,7 +32,7 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12"> 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Title</label>
-                                                    <input type="text" class="form-control" placeholder="Title" name="title"  required value={{ isset($model) ? $model->title :old('title') }}>
+                                                    <input type="text" class="form-control" placeholder="Title" name="title"  required value="{{ isset($model) ? $model->title :old('title') }}"">
                                                       @if($errors->any())
                                                          {{ $errors->first('name') }}
                                                       @endif
@@ -43,7 +43,7 @@
                                                     <label class="form-label" for="validationCustom01">Type </label>
                                                     <input type="text" class="form-control" id="validationCustom01" placeholder="Type" name="type" value="Banner Management" disabled>
                                                      @if($errors->any())
-                                                         {{ $errors->first('email') }}
+                                                         {{ $errors->first('type') }}
                                                       @endif
                                                 </div>
                                             </div>
@@ -60,25 +60,25 @@
                                                 <textarea class="form-control" id="content" placeholder="Enter the Description" rows="10" name="content">{{ isset($model) ? $model->content :old('content') }}</textarea>
                                             </div>
                                             <div class="form-group mb-3">
-                                                <label class="form-label" for="inputFile">Select Files:</label>
+                                                <label class="form-label" for="inputFile">Select Banner:</label>
                                                <input 
                                                 type="file" 
-                                                name="files[]" 
+                                                name="file" 
                                                 id="inputFile"
                                                 multiple
-                                                class="form-control @error('files') is-invalid @enderror">
+                                                class="form-control @error('file') is-invalid @enderror">
                                             </div>  
                                            
-                                             @if(isset($model->media))  
-                                                @foreach ($model->media as $media)
+                                             @if(isset($model->image))  
+                                              
                                                     <div class="col-lg-3 col-md-3 col-sm-6" style="position: relative;"> 
-                                                        <img src="{{ getImage($media->path) }}" style="height: 200px;"/>
-                                                        <a href="#" class="close-icon" data-toggle="modal" data-target="#confirmationModal{{ $media->id }}">
+                                                        <img src="{{ getImage($model->image) }}" style="height: 200px;"/>
+                                                        <a href="#" class="close-icon" data-toggle="modal" data-target="#confirmationModal{{ $model->id }}">
                                                             <i class="bi-x-circle" style="color:red"></i>
                                                         </a>
                                                     </div>  
                                             
-                                            @endforeach  
+                                     
                                             @endif 
                                                         
                                         </div>
