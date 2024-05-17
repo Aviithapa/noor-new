@@ -19,7 +19,9 @@
 @include('website.layout.header')
 @include('website.layout.breadcrumb')
 @yield('content')
+    @if(isset($slug) && $slug !== 'login')
 @include('website.layout.footer')
+@endif
 @include('website.layout.script')
 @stack('scripts')
 </body>
