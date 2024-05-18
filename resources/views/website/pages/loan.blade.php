@@ -23,17 +23,16 @@
 
 
                                      @foreach($loan as $data)
-                @if(isset($data->media))
-                        @foreach ($data->media as $media)
+                
 
 
 
                         <div class="pf-item branding photography">
                                     <div class="item-inner">
-                                        <img src="{{getImage($media->path)}}" alt="Thumb"/>
+                                        <img src="{{getImage($data->image)}}" alt="Thumb"/>
                                         <div class="overlay">
                                             <div class="view-list">
-                                                <a href="{{getImage($media->path)}}"" class="item popup-link"><i class="fa fa-expand"></i></a>
+                                                <a href="{{getImage($data->image)}}" class="item popup-link"><i class="fa fa-expand"></i></a>
                                                 <a href="#"><i class="fa fa-link"></i></a>
                                             </div>
                                         </div>        
@@ -48,8 +47,7 @@
                                 </div>
     
                                 
-                    @endforeach
-                    @endif
+                
                     @endforeach
                                 
                                

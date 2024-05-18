@@ -78,7 +78,7 @@
                                                             <th>#</th>
                                                             <th>Title</th>
                                                             <th>Slug</th>
-                                                            <th>Excerpt</th>
+                                                            <th>Position</th>
                                                             <th>Edit</th>
                                                         </tr>
                                                     </thead>
