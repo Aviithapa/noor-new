@@ -32,7 +32,7 @@ class TeamController extends Controller
     public function index(Request $request)
     {
         //
-        $teams = $this->postRepository->getPaginatedList($request, 'team');
+        $teams = $this->postRepository->getPaginatedList($request, 'team', 'bod');
         return view('admin.pages.cms.team.index', compact('teams', 'request'));
     }
 
