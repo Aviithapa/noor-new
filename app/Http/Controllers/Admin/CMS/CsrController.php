@@ -61,12 +61,13 @@ class CsrController extends Controller
             if ($news == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if (isset($data['files']) && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "csr");
-                    $response['post_id'] = $news->id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "csr");
+                $news->image = $response['path'];
+                $news->save();
+                $response['post_id'] = $news->id;
+                $this->mediaRepository->store($response);
             };
 
             DB::commit();
@@ -110,17 +111,21 @@ class CsrController extends Controller
             if ($news == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if ($data['files'] && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "csr");
-                    $response['post_id'] = $id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "csr");
+                $post = $this->postRepository->findOrFail($id);
+                $post->image = $response['path'];
+                $post->save();
+                $response['post_id'] = $post->id;
+                $this->mediaRepository->store($response);
             };
             DB::commit();
             session()->flash('success', 'Csr has been updated successfully.');
             return redirect()->route('csr.index');
         } catch (Exception $e) {
+            dd($e);
             DB::rollBack();
             session()->flash('danger', 'Oops! Something went wrong.' . $e);
             return redirect()->back()->withInput();
