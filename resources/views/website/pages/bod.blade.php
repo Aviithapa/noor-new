@@ -11,7 +11,7 @@
           <div class="row">
               <div class="col-md-12 team-member-info">
                   <div class="team-carousel-items owl-carousel owl-theme">
-                    @foreach($bods as $bod)
+                    @foreach($bods as $team)
                       <div class="item">
                           <div class="col-md-6 thumb">
                               <img src="{{getImage($team->image)}}" alt="Team">
