@@ -21,7 +21,7 @@
 
                          <div class="card">
                                
-                                    <form action="{{  route("post.index") }}"  method="GET" novalidate>
+                                    <form action="{{  route("team.index") }}"  method="GET" novalidate>
                                         <div class="row" style="padding: 20px 10px 0px 10px;"> 
                                             
                                             <div class="col-lg-4 col-md-4 col-sm-6"> 
@@ -64,9 +64,9 @@
                                     <div class="card-body p-0">
                                         <div class="p-3">
                                             <div class="card-widgets">
-                                                <a href="{{ route('team.create') }}" class="btn btn-primary" style="color: white;">Create New Service</a>
+                                                <a href="{{ route('team.create') }}" class="btn btn-primary" style="color: white;">Create New Team</a>
                                             </div>
-                                            <h5 class="header-title mb-0">Post List</h5>
+                                            <h5 class="header-title mb-0">Team List</h5>
                                         </div>
     
                                         <div id="yearly-sales-collapse" class="collapse show">
@@ -89,8 +89,8 @@
                                                             <td>{{ $data->title }}</td>
                                                             <td>{{ $data->slug }}</td>
                                                             <td>{{ $data->excerpt }}</td>
-                                                            <td><a href="{{ route('post.edit', ['post' => $data->id]) }}"><span class="badge bg-info-subtle text-info">Edit</span></a>
-                                                               <a  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"  data-attr="{{ route('service.destroy', ['service' => $data->id]) }}" style="cursor: pointer;"><span class="badge bg-danger-subtle text-danger">Delete</span></a>                                                            </td>
+                                                            <td><a href="{{ route('team.edit', ['team' => $data->id]) }}"><span class="badge bg-info-subtle text-info">Edit</span></a>
+                                                               <a  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"  data-attr="{{ route('team.destroy', ['team' => $data->id]) }}" style="cursor: pointer;"><span class="badge bg-danger-subtle text-danger">Delete</span></a>                                                            </td>
 
                                                         </tr>
                                                         @endforeach

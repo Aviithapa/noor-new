@@ -20,10 +20,10 @@
                                 </div>
                                 <div class="card-body">
                                        @if(isset($model))
-                                             <form method="POST" action="{{ route('service.update', ["post" => $model->id]) }}" enctype="multipart/form-data">
+                                             <form method="POST" action="{{ route('team.update', ["team" => $model->id]) }}" enctype="multipart/form-data">
                                                  @method('PUT')
                                         @else
-                                            <form method="POST" action="{{ route('service.store') }}" enctype="multipart/form-data">
+                                            <form method="POST" action="{{ route('team.store') }}" enctype="multipart/form-data">
                                         @endif
                                         @csrf
                               
@@ -38,12 +38,17 @@
                                                       @endif
                                                 </div>
                                             </div> 
-                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Type </label>
-                                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Type" name="type" value="Content Management" disabled>
+                                                   
+                                                    <select class="form-control" name="type" id="type" required >
+                                                           <option value="{{ isset($model) ? $model->type : old('type') }}">{{ isset($model) ? $model->type : old('type') }}</option>
+                                                            <option value="bod">Bod</option>
+                                                            <option value="team">Team</option> 
+                                                     </select>
                                                      @if($errors->any())
-                                                         {{ $errors->first('email') }}
+                                                         {{ $errors->first('type') }}
                                                       @endif
                                                 </div>
                                             </div>
@@ -59,26 +64,23 @@
                                                 <label> Content </label>
                                                 <textarea class="form-control" id="content" placeholder="Enter the Description" rows="10" name="content">{{ isset($model) ? $model->content :old('content') }}</textarea>
                                             </div>
-                                            <div class="form-group mb-3">
-                                                <label class="form-label" for="inputFile">Cover Photo:</label>
+                                              <div class="form-group mb-3">
+                                                <label class="form-label" for="inputFile"> Photo:</label>
                                                <input 
                                                 type="file" 
-                                                name="files[]" 
+                                                name="file" 
                                                 id="inputFile"
                                                 multiple
                                                 class="form-control @error('files') is-invalid @enderror">
                                             </div>  
-                                            @if(isset($model->media))  
-                                                @foreach ($model->media as $media)
-                                                    
+                                            @if(isset($model->image))   
                                                     <div class="col-lg-3 col-md-3 col-sm-6" style="position: relative;"> 
-                                                        <img src="{{ getImage($media->path) }}" style="height: 200px;"/>
-                                                        <a href="#" class="close-icon" data-toggle="modal" data-target="#confirmationModal{{ $media->id }}">
+                                                        <img src="{{ getImage($model->image) }}" style="height: 200px;"/>
+                                                        <a href="#" class="close-icon" data-toggle="modal" data-target="#confirmationModal{{ $model->id }}">
                                                             <i class="bi-x-circle" style="color:red"></i>
                                                         </a>
-                                                    </div>
-                                             @endforeach  
-                                            @endif             
+                                                    </div> 
+                                            @endif           
                                         </div>
                                             
                                         <button class="btn btn-primary mt-5" type="submit">Submit form</button>

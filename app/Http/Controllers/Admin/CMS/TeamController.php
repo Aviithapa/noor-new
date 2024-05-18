@@ -54,19 +54,20 @@ class TeamController extends Controller
         $data = $request->all();
         try {
             DB::beginTransaction();
-            $data['type'] = 'team';
             $data['slug'] = generateSlug($data['title']);
             $news = $this->postRepository->store($data);
 
             if ($news == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if (isset($data['files']) && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "team");
-                    $response['post_id'] = $news->id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "news");
+                $news->image = $response['path'];
+                $news->save();
+                $response['post_id'] = $news->id;
+                $this->mediaRepository->store($response);
             };
             DB::commit();
             session()->flash('success', 'Team has been created successfully.');
@@ -109,12 +110,15 @@ class TeamController extends Controller
             if ($news == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if ($data['files'] && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "team");
-                    $response['post_id'] = $id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "team");
+                $post = $this->postRepository->findOrFail($id);
+                $post->image = $response['path'];
+                $post->save();
+                $response['post_id'] = $post->id;
+                $this->mediaRepository->store($response);
             };
             DB::commit();
             session()->flash('success', 'Team has been updated successfully.');
