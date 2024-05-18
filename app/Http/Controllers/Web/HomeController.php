@@ -46,6 +46,9 @@ class HomeController extends BaseController
                     $this->view_data['loan'] = $this->postRepository->all()->where('type', 'loan');
 
                     break;
+                case 'bod':
+                    $this->view_data['bods'] = $this->postRepository->all()->where('type', 'bod');
+                    break;
             }
             return view('website.pages.' . $slug,  $this->view_data);
         }

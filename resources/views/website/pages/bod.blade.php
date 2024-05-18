@@ -11,21 +11,22 @@
           <div class="row">
               <div class="col-md-12 team-member-info">
                   <div class="team-carousel-items owl-carousel owl-theme">
+                    @foreach($bods as $bod)
                       <div class="item">
                           <div class="col-md-6 thumb">
-                              <img src="assets/img/800x600.png" alt="Team">
+                              <img src="{{getImage($team->image)}}" alt="Team">
                           </div>
                           <div class="col-md-6 info title">
-                              <h3>Maria Prokash</h3>
-                              <h5>managing director</h5>
+                              <h3>{{ $team->title }}</h3>
+                              <h5>{{ $team->excerpt }}</h5>
                               <p>
-                                  Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. 
+                                  {!! $team->content !!}
                               </p>
                               <ul>
                                   <li>
-                                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                      <a href="{{ $team->meta_link }}"><i class="fab fa-facebook-f"></i></a>
                                   </li>
-                                  <li>
+                                  {{-- <li>
                                       <a href="#"><i class="fab fa-twitter"></i></a>
                                   </li>
                                   <li>
@@ -33,62 +34,12 @@
                                   </li>
                                   <li>
                                       <a href="#"><i class="fab fa-pinterest"></i></a>
-                                  </li>
+                                  </li> --}}
                               </ul>
                           </div>
                       </div>
-                      <div class="item">
-                          <div class="col-md-6 thumb">
-                              <img src="assets/img/800x600.png" alt="Team">
-                          </div>
-                          <div class="col-md-6 info title">
-                              <h3>Ajnob Prido</h3>
-                              <h5>marketing manager</h5>
-                              <p>
-                                  Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. 
-                              </p>
-                              <ul>
-                                  <li>
-                                      <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><i class="fab fa-twitter"></i></a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><i class="fab fa-linkedin"></i></a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><i class="fab fa-pinterest"></i></a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="item">
-                          <div class="col-md-6 thumb">
-                              <img src="assets/img/800x600.png" alt="Team">
-                          </div>
-                          <div class="col-md-6 info title">
-                              <h3>Maria Prokash</h3>
-                              <h5>managing director</h5>
-                              <p>
-                                  Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. 
-                              </p>
-                              <ul>
-                                  <li>
-                                      <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><i class="fab fa-twitter"></i></a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><i class="fab fa-linkedin"></i></a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><i class="fab fa-pinterest"></i></a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
+                      
+                      @endforeach
                   </div>
               </div>
           </div>
