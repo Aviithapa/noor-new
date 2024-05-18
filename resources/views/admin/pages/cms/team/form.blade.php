@@ -55,13 +55,14 @@
 
                                               <div class="form-group mb-3">
                                                 <label> Facebook Link</label>
-                                                <input type="text" class="form-control"  placeholder="Enter the Description" name="meta_link">{{ isset($model) ? $model->meta_link :old('meta_link') }}</input>
+                                                <input type="text" class="form-control"  placeholder="Enter the Description" name="meta_link" value="{{ isset($model) ? $model->meta_link :old('meta_link') }}"/>
                                             </div>
 
                                              <div class="form-group mb-3">
-                                                <label> Excerpt </label>
-                                                <textarea class="form-control"  placeholder="Enter the Description" rows="5" name="excerpt">{{ isset($model) ? $model->excerpt :old('excerpt') }}</textarea>
+                                                <label> Position</label>
+                                                <input type="text" class="form-control"  placeholder="Enter the Description" name="excerpt" value="{{ isset($model) ? $model->excerpt :old('excerpt') }}"/>
                                             </div>
+
 
                                              <div class="form-group mb-3">
                                                 <label> Content </label>
