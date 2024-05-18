@@ -2,6 +2,6 @@
 
 @section('content')
 
-   @include('admin.pages.cms.service.form')
+   @include('admin.pages.cms.team.form')
 
 @endsection
