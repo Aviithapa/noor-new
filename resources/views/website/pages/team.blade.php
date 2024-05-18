@@ -24,7 +24,7 @@
                               </p>
                               <ul>
                                   <li>
-                                      <a href="{{ $team->meta_link }}"><i class="fab fa-facebook-f"></i></a>
+                                      <a href="{{ $team->meta_link }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                   </li>
                                   {{-- <li>
                                       <a href="#"><i class="fab fa-twitter"></i></a>

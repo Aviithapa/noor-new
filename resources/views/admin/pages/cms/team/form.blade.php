@@ -53,7 +53,10 @@
                                                 </div>
                                             </div>
 
-                                             
+                                              <div class="form-group mb-3">
+                                                <label> Facebook Link</label>
+                                                <input type="text" class="form-control"  placeholder="Enter the Description" name="meta_link">{{ isset($model) ? $model->meta_link :old('meta_link') }}</input>
+                                            </div>
 
                                              <div class="form-group mb-3">
                                                 <label> Excerpt </label>
