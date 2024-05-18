@@ -2,6 +2,6 @@
 
 @section('content')
 
-   @include('admin.pages.cms.team.form', ['model' => $teams])
+   @include('admin.pages.cms.team.form', ['model' => $team])
 
 @endsection
