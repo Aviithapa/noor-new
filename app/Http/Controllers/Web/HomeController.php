@@ -41,10 +41,10 @@ class HomeController extends BaseController
                     break;
                 case 'csr':
                     $this->view_data['csr'] = $this->postRepository->all()->where('type', 'csr');
+                    dd($this->view_data['csr']);
                     break;
                 case 'loan':
                     $this->view_data['loan'] = $this->postRepository->all()->where('type', 'loan');
-
                     break;
                 case 'bod':
                     $this->view_data['bods'] = $this->postRepository->all()->where('type', 'bod');
