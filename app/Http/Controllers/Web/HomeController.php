@@ -49,6 +49,9 @@ class HomeController extends BaseController
                 case 'bod':
                     $this->view_data['bods'] = $this->postRepository->all()->where('type', 'bod');
                     break;
+                case 'team':
+                    $this->view_data['teams'] = $this->postRepository->all()->where('type', 'team');
+                    break;
             }
             return view('website.pages.' . $slug,  $this->view_data);
         }
