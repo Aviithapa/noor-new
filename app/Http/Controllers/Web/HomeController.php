@@ -56,6 +56,12 @@ class HomeController extends BaseController
                     $this->view_data['history'] = $this->postRepository->findOrFail(39);
                     $this->view_data['annual_report'] = $this->postRepository->findOrFail(40);
                     break;
+                case 'mobile-banking':
+                    $this->view_data['mobile_banking'] = $this->postRepository->findOrFail(42);
+                    break;
+                case 'saving':
+                    $this->view_data['saving'] = $this->postRepository->findOrFail(30);
+                    break;
             }
             return view('website.pages.' . $slug,  $this->view_data);
         }
