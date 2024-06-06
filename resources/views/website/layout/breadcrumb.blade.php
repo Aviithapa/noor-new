@@ -2,9 +2,9 @@
     ============================================= -->
 
           
-  @if(isset($pageData->media) && $slug !== 'index')
+  @if(isset($pageData) && $slug !== 'index')
     
-       <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light" style="background-image: url({{getImage($team->image)}})">
+       <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light" style="background-image: url({{getImage($pageData->image)}})">
     
         <div class="container">
           <div class="row">
