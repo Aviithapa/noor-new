@@ -59,25 +59,23 @@
                                                 <label> Content </label>
                                                 <textarea class="form-control" id="content" placeholder="Enter the Description" rows="10" name="content">{{ isset($model) ? $model->content :old('content') }}</textarea>
                                             </div>
-                                            <div class="form-group mb-3">
-                                                <label class="form-label" for="inputFile">Banner:</label>
+                                             <div class="form-group mb-3">
+                                                <label class="form-label" for="inputFile">Cover Photo Page:</label>
                                                <input 
                                                 type="file" 
-                                                name="files[]" 
+                                                name="file" 
                                                 id="inputFile"
-                                                multiple
-                                                class="form-control @error('files') is-invalid @enderror">
+                                                class="form-control @error('file') is-invalid @enderror">
                                             </div>  
-                                            @if(isset($model->media))  
-                                                @foreach ($model->media as $media)
-                                                    
+                                            @if(isset($model->image))  
+                                                
                                                     <div class="col-lg-3 col-md-3 col-sm-6" style="position: relative;"> 
-                                                        <img src="{{ getImage($media->path) }}" style="height: 200px;"/>
+                                                        <img src="{{ getImage($media->image) }}" style="height: 200px;"/>
                                                         <a href="#" class="close-icon" data-toggle="modal" data-target="#confirmationModal{{ $media->id }}">
                                                             <i class="bi-x-circle" style="color:red"></i>
                                                         </a>
                                                     </div>
-                                             @endforeach  
+                                             
                                             @endif             
                                         </div>
                                             

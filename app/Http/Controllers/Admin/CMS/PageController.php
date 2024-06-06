@@ -57,17 +57,19 @@ class PageController extends Controller
             DB::beginTransaction();
             $data['type'] = 'pages';
             $data['slug'] = generateSlug($data['title']);
-            $news = $this->postRepository->store($data);
+            $post = $this->postRepository->store($data);
 
-            if ($news == false) {
+            if ($post == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if (isset($data['files']) && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "banner");
-                    $response['post_id'] = $news->id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "post");
+                $post->image = $response['path'];
+                $post->save();
+                $response['post_id'] = $post->id;
+                $this->mediaRepository->store($response);
             };
             DB::commit();
             session()->flash('success', 'Page has been created successfully.');
@@ -110,12 +112,15 @@ class PageController extends Controller
             if ($news == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
-            } else if ($data['files'] && count($data['files']) > 0) {
-                foreach ($data['files'] as $file) {
-                    $response =  $this->fileUploader->upload($file, "banner");
-                    $response['post_id'] = $id;
-                    $this->mediaRepository->store($response);
-                }
+            }
+
+            if (isset($data['file'])) {
+                $response =  $this->fileUploader->upload($data['file'], "post");
+                $post = $this->postRepository->findOrFail($id);
+                $post->image = $response['path'];
+                $post->save();
+                $response['post_id'] = $post->id;
+                $this->mediaRepository->store($response);
             };
             DB::commit();
             session()->flash('success', 'Page has been updated successfully.');
