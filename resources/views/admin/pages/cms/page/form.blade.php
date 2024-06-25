@@ -32,7 +32,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="validationCustom01">Title</label>
                                 <input type="text" class="form-control" placeholder="Title" name="title" required
-                                    value={{ isset($model) ? $model->title : old('title') }}>
+                                    value="{{ isset($model) ? $model->title : old('title') }}">
                                 @if ($errors->any())
                                     {{ $errors->first('name') }}
                                 @endif
