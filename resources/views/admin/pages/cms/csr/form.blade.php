@@ -67,7 +67,7 @@
                         </div>
                         @if (isset($model->image))
                             <div class="col-lg-3 col-md-3 col-sm-6" style="position: relative;">
-                                <img src="{{ getImage($modal->image) }}" style="height: 200px;" />
+                                <img src="{{ getImage($model->image) }}" style="height: 200px;" />
 
                             </div>
                         @endif
