@@ -31,7 +31,7 @@
                         @foreach ($savings as $data)
                         <div class="pf-item branding photography">
                             <div class="item-inner">
-                                <img src="{{ getImage($data->image) }}" alt="Thumb"/>
+                                <img src="{{ getImage($data->image) }}" alt="Thumb" height="360"/>
                                 <div class="overlay">
                                     <div class="view-list">
                                         <a href="{{ getImage($data->image) }}" class="item popup-link" height="360"><i class="fa fa-eye"></i></a>
