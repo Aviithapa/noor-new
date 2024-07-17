@@ -19,7 +19,7 @@
                     <button class="button-toggle-menu">
                         <i class="ri-menu-line"></i>
                     </button>
-                
+
                 </div>
 
                 <ul class="topbar-menu d-flex align-items-center gap-3">
@@ -86,7 +86,7 @@
                 </ul>
             </div>
         </div>
-    
+
     <div class="leftside-menu">
 
             <!-- Brand Logo Dark -->
@@ -113,6 +113,12 @@
                         </a>
                     </li>
 
+                    <li class="side-nav-item">
+                        <a href="{{ url('cms/annual-report') }}" class="side-nav-link">
+                            <i class="bi-file"></i>
+                            <span> Annual Report </span>
+                        </a>
+                    </li>
 
                      <li class="side-nav-item">
                         <a href="{{ url('cms/banner') }}" class="side-nav-link">
@@ -165,7 +171,7 @@
                             <span> Service Management </span>
                         </a>
                     </li>
-                  
+
                      <li class="side-nav-item">
                         <a href="{{ url('cms/team') }}" class="side-nav-link">
                             <i class="bi-chat-left-dots"></i>
@@ -179,19 +185,19 @@
                             <span> Testimonial Management </span>
                         </a>
                     </li>
-                     
-                    
-                  
 
-                    <li class="side-nav-item"> 
+
+
+
+                    <li class="side-nav-item">
                            <a href="{{ route('logout') }}" class="side-nav-link">
                                 <i class="bi-box-arrow-right "></i>
                                 <span>Logout</span>
                             </a>
                     </li>
 
-                      
-                  
+
+
                 </ul>
                 <!--- End Sidemenu -->
 

@@ -2,6 +2,7 @@
 
 //Route Dashboard
 
+use App\Http\Controllers\Admin\CMS\AnnualReportController;
 use App\Http\Controllers\Admin\CMS\BannerController;
 use App\Http\Controllers\Admin\CMS\ClientController;
 use App\Http\Controllers\Admin\CMS\CsrController;
@@ -20,7 +21,7 @@ use App\Http\Controllers\Admin\UserController;
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::resource('dashboard/user', UserController::class)->middleware(['auth']);
 
-// CMS 
+// CMS
 Route::resource('cms/menu', MenuController::class)->middleware(['auth']);
 Route::resource('cms/post', PostController::class)->middleware(['auth']);
 Route::resource('cms/news', NewsController::class)->middleware(['auth']);
@@ -32,3 +33,5 @@ Route::resource('cms/client', ClientController::class)->middleware(['auth']);
 Route::resource('cms/service', ServiceController::class)->middleware(['auth']);
 Route::resource('cms/csr', CsrController::class)->middleware(['auth']);
 Route::resource('cms/team', TeamController::class)->middleware(['auth']);
+Route::resource('cms/annual-report', AnnualReportController::class)->middleware(['auth']);
+

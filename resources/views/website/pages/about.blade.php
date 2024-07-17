@@ -2,24 +2,25 @@
 @extends('website.layout.app')
 
 @section('content')
-  
 
 
-    <!-- Start About 
+
+    <!-- Start About
     ============================================= -->
     <div class="about-area bg-gray services-include default-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 default info">
-                    <h2>   {{ $about->title }}</h2>
+                    <h2>{{ $about->title }}</h2>
                     <p>
-                              {{ $about->excerpt }}   </p>
+                        {{ $about->excerpt }}
+                     </p>
                     <p>
                        {!! $about->content !!}                  </p>
                     <div class="bottom-info">
                         <ul>
                             <li>
-                                <a class="btn btn-theme effect btn-sm" href="#">contact us</a>
+                                <a class="btn btn-theme effect btn-sm" href="{{ url('contact') }}">contact us</a>
                             </li>
                             <li><i class="fas fa-phone"></i> 01-4155311</li>
                         </ul>
@@ -170,13 +171,13 @@
                     <p>
                        {!! $annual_report->content !!}
                     </p>
-                    <a class="btn btn-theme effect btn-sm" href="#">View details</a>
+                    <a class="btn btn-theme effect btn-sm" href="{{ url('annual-report') }}">View details</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Business Growth -->
-    
+
     <!-- Clients
     ============================================= -->
    @include('website.layout.clients')
