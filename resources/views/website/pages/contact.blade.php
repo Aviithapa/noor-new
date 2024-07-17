@@ -2,9 +2,9 @@
 @extends('website.layout.app')
 
 @section('content')
-  
 
-    <!-- Start Contact 
+
+    <!-- Start Contact
     ============================================= -->
     <div class="contact-form-area default-padding">
       <div class="container">
@@ -114,7 +114,7 @@
               <div id="id1" class="tab-pane active">
                 <ul>
                   <li>
-                    <img src="assets/img/office.jpeg" alt="Thumb" />
+                    <img src="{{ asset('assets/images/head.jpeg') }}" alt="Thumb" />
                   </li>
                   <li>
                     <div class="icon">
@@ -153,8 +153,8 @@
               </div>
               <div id="id2" class="tab-pane">
                 <ul>
-                  <li>
-                    <img src="assets/img/no-branch.jpeg" alt="Thumb" />
+                  <li style="text-align: center;">
+                    <img src="{{ asset('assets/images/branch.jpeg') }}" alt="Thumb" height="150"/>
                   </li>
                   <li>
                     <div class="icon">
@@ -193,9 +193,9 @@
               </div>
               <div id="id3" class="tab-pane">
                 <ul>
-                  <li>
-                    <img src="assets/img/no-branch.jpeg" alt="Thumb" />
-                  </li>
+                    <li style="text-align: center;">
+                        <img src="{{ asset('assets/images/branch.jpeg') }}" alt="Thumb" height="150"/>
+                    </li>
                   <li>
                     <div class="icon">
                       <i class="fas fa-map-marker-alt"></i>
@@ -239,7 +239,7 @@
     </div>
     <!-- End Contact -->
 
-    <!-- Start Maps Area 
+    <!-- Start Maps Area
     ============================================= -->
     <div class="maps-area-items">
       <div class="maps-box oh">

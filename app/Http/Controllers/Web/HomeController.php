@@ -61,6 +61,7 @@ class HomeController extends BaseController
                     break;
                 case 'saving':
                     $this->view_data['saving'] = $this->postRepository->findOrFail(30);
+                    $this->view_data['savings'] = $this->postRepository->all()->where('type', 'services');
                     break;
                 case 'annual-report':
                     $this->view_data['annualReport'] = $this->postRepository->all()->where('type', 'annual_report');

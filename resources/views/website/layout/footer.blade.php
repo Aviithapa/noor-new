@@ -1,4 +1,4 @@
-  <!-- Start Footer 
+  <!-- Start Footer
     ============================================= -->
     <footer class="default-padding-top text-light">
       <div class="container">
@@ -39,10 +39,9 @@
               <div class="f-item link full">
                 <h4>Our Support</h4>
                 <ul>
-                  <li><a href="#">Notice</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">News and Events</a></li>
-                  <li><a href="#">Share and Rights issue</a></li>
+                  <li><a href="{{ url('saving') }}">Saving</a></li>
+                  <li><a href="{{ url('loan') }}">Loan</a></li>
+                  <li><a href="{{ url('form') }}">Form</a></li>
                 </ul>
               </div>
             </div>
