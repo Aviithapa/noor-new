@@ -34,8 +34,8 @@
                                 <img src="{{ getImage($data->image) }}" alt="Thumb"/>
                                 <div class="overlay">
                                     <div class="view-list">
-                                        <a href="{{ getImage($data->image) }}" class="item popup-link"><i class="fa fa-eye"></i></a>
-                                        <a href="#"><i class="fa fa-link"></i></a>
+                                        <a href="{{ getImage($data->image) }}" class="item popup-link" height="360"><i class="fa fa-eye"></i></a>
+                                        <a href="{{ url('form') }}"><i class="fa fa-link"></i></a>
                                     </div>
                                 </div>
                             </div>
