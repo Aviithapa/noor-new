@@ -162,9 +162,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="lineChart">
-                        <canvas id="lineChart" height="200"></canvas>
-                    </div>
+                    <img src="{{getImage($annual_report->image)}}" alt="Thumb"/>
                 </div>
                 <div class="col-md-6 default info">
                     <h2>Annual Report <br>from starting to now</h2>
