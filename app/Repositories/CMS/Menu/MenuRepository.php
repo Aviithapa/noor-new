@@ -24,7 +24,7 @@ class MenuRepository extends Repository
      * @param array $columns
      * @return LengthAwarePaginator
      */
-    public function getPaginatedList(Request $request, array $columns = array('*')): LengthAwarePaginator
+    public function getPaginatedList(Request $request, $type = 'single' , array $columns = array('*')): LengthAwarePaginator
     {
         $limit = $request->get('limit', config('app.per_page'));
         return $this->model->newQuery()
