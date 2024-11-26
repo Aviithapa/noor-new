@@ -134,9 +134,9 @@
     <div class="statistics-area">
         <div class="container-fluid container-box oh">
             <div class="col-md-6 thumb bg-cover">
-                <video width="100%" height="500px" muted controls>
-                    <source src="/videos/What is a Co-operative_.mp4" />
-                </video>
+                {{-- <video width="100%" height="500px" muted controls> --}}
+                    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/fnXhmhOYTos?si=h_rGfykpIaSMk_li" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                {{-- </video> --}}
             </div>
             <div class="col-md-6 info">
                 <h2>Our Statistics Rate</h2>
